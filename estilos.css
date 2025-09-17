@@ -1,0 +1,132 @@
+body {
+  background-color: #18A999; /* Fondo general de la página: marca el tono del diseño */
+}
+
+/* Estilo base para TODOS los enlaces <a> */
+/* Aquí ya se convierten en “cajitas clicables” gracias al display:inline-block, padding y border-radius */
+a {
+  color: #484349;
+  background-color: #F7F0F0;
+  font-size: 12px;
+  text-decoration: none; /* Se quita el subrayado para que se parezca más a un botón */
+  padding: 8px 12px;
+  border: 1px; /* Aquí no define tipo de borde, quedaría incompleto */
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Ajustar los enlaces de la PRIMERA lista para ocupar todo el ancho */
+ul:first-of-type li {
+  width: 100%; /* cada <li> ocupa toda la fila */
+  margin-bottom: 10px;    /* espacio entre cada elemento */
+}
+
+ul:first-of-type li a {
+  display: block;       /* convierte al enlace en bloque */
+  width: 100%;          /* se estira al ancho completo */
+  box-sizing: border-box; /* para que padding y borde no rompan el ancho */
+  text-align: center;   /* opcional: centra el texto en cada botón */
+  font-size: 14px;      /* tamaño de la letra */
+  padding: 12px;        /* más aire para que parezcan botones grandes */
+}
+
+
+/* Se eliminan las viñetas de las listas */
+/* Esto es necesario porque los enlaces están dentro de <li>, no se verían “limpios” con bullets */
+li {
+  list-style: none;
+}
+
+/* Estado cuando un enlace recibe foco (ej: con tabulador o clic) */
+/* Sirve para accesibilidad, aunque outline aquí está incompleto (falta solid/dashed) */
+a:focus {
+  outline: 2px;
+  background-color: #484349; /* El fondo cambia para destacar qué enlace está activo */
+}
+
+/* Primer enlace de la lista: se diferencia del resto */
+/* Esto se usa para dar protagonismo al inicio del menú */
+li:first-child a {
+  color: #109648;
+  background-color: #F7F0F0;
+}
+
+/* Último enlace de la lista: se marca distinto al final */
+/* Útil para romper la monotonía visual y dar cierre */
+li:last-child a {
+  color: red;
+  background-color: #F7F0F0;
+}
+
+/* Efecto al pasar el mouse: agrega un icono al final */
+/* Pseudo-elemento ::after se usa aquí para mostrar un 🔗 temporal */
+a:hover::after {
+  content: " 🔗";
+}
+
+/* Estiliza la primera letra de cada enlace */
+/* Buen detalle tipográfico para dar impacto inicial */
+a::first-letter {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Alterna colores entre enlaces en posiciones impares y pares */
+/* Sirve para crear contraste visual dentro del menú */
+li:nth-child(odd) a {
+  background-color: antiquewhite;
+}
+
+li:nth-child(even) a {
+  background-color: #F7F0F0;
+}
+
+/* Estilo general del contenedor */
+div {
+  max-width: 600px;              /* Para que no se estire demasiado en pantallas grandes */
+  margin: 20px auto;             /* Centrar el bloque en la página */
+  padding: 20px;                 /* Espaciado interno */
+  background-color: #f9f9f9;     /* Fondo suave */
+  border: 2px solid #41729c;     /* Borde para encerrar el contenido */
+  border-radius: 10px;           /* Bordes redondeados para que se vea más amable */
+  font-family: Arial, sans-serif;/* Tipografía sencilla y legible */
+  line-height: 1.6;              /* Más espacio entre líneas para facilitar lectura */
+}
+
+/* Estilo para los párrafos dentro del div */
+div p {
+  color: #333;                   /* Texto oscuro pero no negro, más cómodo de leer */
+  margin-bottom: 15px;           /* Espacio debajo de cada párrafo */
+}
+
+/* Estilo para la lista */
+div ul {
+  list-style-type: none;         /* Quitar viñetas normales */
+  padding: 0;                    /* Quitar indentación por defecto */
+  margin: 0 0 15px 0;            /* Separación con respecto al párrafo */
+}
+
+/* Estilo para cada ítem de la lista */
+div ul li {
+  background: #eaf6ff;           /* Fondo azul claro */
+  margin: 5px 0;                 /* Separación entre cada caja de la lista */
+  padding: 8px 12px;             /* Espaciado interno de cada caja */
+  border-left: 5px solid #41729c;/* Línea decorativa al lado izquierdo */
+  border-radius: 5px;            /* Bordes redondeados */
+  transition: all 0.3s ease;     /* Animación suave para efectos */
+}
+
+/* Efecto al pasar el mouse sobre cada li */
+div ul li:hover {
+  background: #d0eaff;           /* Fondo más oscuro al pasar el mouse */
+  transform: translateX(5px);    /* Se mueve un poquito a la derecha */
+  cursor: pointer;               /* Mano de enlace (aunque no lo sea) */
+}
+
+/* Resaltar la primera letra del primer párrafo */
+div p:first-of-type::first-letter {
+  font-size: 22px;               /* Más grande */
+  font-weight: bold;             /* Negrita */
+  color: #41729c;                /* Azul para destacar */
+}

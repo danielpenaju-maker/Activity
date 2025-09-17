@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Ejemplo Pseudo-clases y Pseudo-elementos</title> 
+    <link rel="stylesheet" href="estilos.css"> 
+</head>
+
+<body>
+    <ul>
+        <!--Lista de enlaces para probar pseudo-clases como :hover, :focus, etc. -->
+        <li><a href="https://www.facebook.com" class="facebook">facebook</a></li>
+
+        <!--También este enlace sirve para aplicar un selector por id -->
+        <li><a href="https://www.youtube.com" id=Youtube>Youtube</a></li>
+
+        <!--Enlace con clase personalizada, útil para aplicar estilos específicos -->
+        <li><a href="https://www.x.com" class="x">X</a></li>
+
+        <!--Otro enlace con clase distinta, se puede probar :last-child aquí -->
+        <li><a href="https://www.instagram.com" class="instagram">Instagram</a></li>
+    </ul>
+
+    <div>
+        <!--Primer párrafo introductorio: es un buen candidato para aplicar ::first-letter -->
+        <p>En esta actividad pude aprender cómo utilizar propiedades en css para mejorar
+            la interactividad y la experiencia de usuario, utilizando pseudo-elementos y pseudo-clases
+            tales como 
+        </p>
+
+            <!--Esta lista no es decorativa: enumera directamente las pseudo-clases y pseudo-elementos -->
+            <!--Es práctica para aplicar :nth-child(odd) y :nth-child(even) y ver cómo alterna el diseño -->
+            <ul>
+                <li>:focus</li>
+                <li>:first-child</li>
+                <li>:last-child</li>
+                <li>:hover</li>
+                <li>:nth-child(odd)</li>
+                <li>:nth-child(even)</li>
+                <li>:after</li>
+                <li>:first-letter</li>  
+            </ul>
+
+        <!--Este párrafo final sirve de "conclusión" y se puede estilizar distinto para resaltar -->
+        <p>Interactuando con estas propiedades pude comprender que se requiere lógica y pericia
+            para poder lograr un diseño agradable para el usuario, responsivo y funcional; y que
+            no basta solo con que la IA resuelva todo mi código por mí si yo no tengo conocimiento
+            de lo que estoy implementando
+        </p>
+    </div>
+</body>
+
+</html>
